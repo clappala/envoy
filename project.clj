@@ -12,7 +12,7 @@
 
   :plugins
   [[lein-codox "0.9.5"]
-   [lein-cloverage "1.0.9"]]
+   [lein-cloverage "1.0.9" :exclusions [org.clojure/clojure]]]
 
   :dependencies
   [[org.clojure/clojure "1.8.0" :scope "provided"]

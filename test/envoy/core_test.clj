@@ -30,6 +30,18 @@
   (is (= :integer (get-in env/known-vars [:envoy-test :type])))
   (is (= 'envoy.core-test (get-in env/known-vars [:envoy-test :ns]))))
 
+
+(deftest set-env
+  (env/set-env! :a "1")
+  (is (= {:a "1"}))
+
+  (env/set-env! :a "1" :b "2")
+  (is (= {:a "1" :b "2"}))
+
+  (env/set-env! {:a "1" :b "2"})
+  (is (= {:a "1" :b "2"})))
+
+
 (deftest parser-declaration
   (do
     (env/set-env! :envoy-custom-parser "{:a 1}")
